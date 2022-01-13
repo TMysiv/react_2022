@@ -1,0 +1,10 @@
+.details{
+    border: 1px solid black;
+    background: mistyrose;
+}
+.details button{
+    background: blue;
+    color: white;
+    margin-left: 40%;
+    font-size: 16px;
+}
