@@ -1,11 +1,12 @@
-import {urls} from "../confings/urls";
+import {baseUrl} from "../configs/urls";
 
-const getPosts = () => {
-    return fetch(urls.posts)
-            .then(value => value.json())
+const getPostsById = (id) => {
+    return fetch(`${baseUrl}/users/${id}/posts`)
+        .then(value => value.json())
 
 }
 
+
 export {
-    getPosts
+    getPostsById
 }

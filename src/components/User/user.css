@@ -1,11 +1,11 @@
 .user{
-    display: flex;
+    background: khaki;
     border: 1px solid black;
-    background: cornflowerblue;
+    display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+    padding: 5px;
 }
 .user button:hover{
-    background: red;
     cursor: pointer;
+    background: red;
 }

@@ -2,12 +2,14 @@ import "./App.css"
 
 import React from 'react';
 
-import Users from "./components/Users/Users";
+import InfoUsers from "./components/InfoUsers/InfoUsers";
+
+
 
 const App = () => {
     return (
         <div>
-            <Users/>
+           <InfoUsers/>
         </div>
     );
 };

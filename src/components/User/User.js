@@ -2,16 +2,17 @@ import React from 'react';
 
 import './user.css'
 
+const User = ({user, getDetails}) => {
 
-const User = ({user:{id,name,email,username},chooseUser}) => {
 
     return (
         <div className={'user'}>
-            <h2>{id}--{name}--{username}--{email}</h2>
-            <button onClick={()=>{
-                chooseUser(id)
-            }
-            }>Details</button>
+            {user.id}) {user.name} -- {user.username}
+            <button onClick={() => {
+                getDetails(user)
+            }}>
+                details
+            </button>
         </div>
     );
 };

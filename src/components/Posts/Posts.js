@@ -1,13 +1,13 @@
-import React from 'react';
+import Post from "../Post/Post";
 
-const Posts = ({post:{userId,title,body}}) => {
-
+const Posts = ({post}) => {
 
     return (
         <div>
-            <h2>{userId}--{title}--{body}</h2>
+            {post.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
 };
+
 
 export default Posts;
