@@ -5,6 +5,8 @@ import React, {useState} from 'react';
 import Form from "./components/Form/Form";
 import Cars from "./components/Cars/Cars";
 import carService from "./services/carService";
+import FormUpdate from "./components/FormUpdate/FormUpdate";
+
 
 const App = () => {
 
@@ -15,24 +17,17 @@ const App = () => {
     }
 
     const deleteCarId = (id) => {
-        carService.deleteById(id)
+        carService.deleteById(id).then(value => setTrigger(value))
     }
-
-
-    const upDateCarById = (id,car) =>{
-        carService.upDateById(id,{model:'kia',price:16000,year:2018})
-        setTrigger(car)
-    }
-
 
 
     return (
         <div>
-            <Form refreshCars={refreshCars}/>
-            <Cars trigger={trigger} deleteCarId={deleteCarId} upDateCarById={upDateCarById}/>
+            <Form refreshCars={refreshCars} />
+            <FormUpdate updateCar={updateCar}/>
+            <Cars trigger={trigger} deleteCarId={deleteCarId} upDateCarById={updateCar} />
         </div>
     );
 };
-
 
 export default App;

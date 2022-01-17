@@ -7,15 +7,14 @@ import {carValidator} from "../../validator/car.validator";
 import './form.css'
 
 
-const Form = ({refreshCars,upDateCarById}) => {
+const Form = ({refreshCars}) => {
 
     const {
-        register, handleSubmit, formState: {errors}
+        register, handleSubmit, formState: {errors},reset
     }
         = useForm({resolver: joiResolver(carValidator), mode: 'onTouched'});
 
     const [error, setError] = useState({});
-
 
     const addNewCar = (car) => {
         try {
@@ -26,7 +25,6 @@ const Form = ({refreshCars,upDateCarById}) => {
             setError(error.response.data)
         }
     }
-
 
     return (
         <div>
