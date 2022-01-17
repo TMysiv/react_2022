@@ -20,12 +20,10 @@ const App = () => {
         carService.deleteById(id).then(value => setTrigger(value))
     }
 
-
     return (
         <div>
             <Form refreshCars={refreshCars} />
-            <FormUpdate updateCar={updateCar}/>
-            <Cars trigger={trigger} deleteCarId={deleteCarId} upDateCarById={updateCar} />
+            <Cars trigger={trigger} deleteCarId={deleteCarId} />
         </div>
     );
 };

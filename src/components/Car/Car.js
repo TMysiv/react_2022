@@ -16,11 +16,6 @@ const Car = ({car, deleteCarId, upDateCarById}) => {
                 deleteCarId(id)
             }}>delete
             </button>
-
-            <button onClick={() => {
-                upDateCarById(id)
-            }}>update
-            </button>
             <hr/>
         </div>
     );
