@@ -1,0 +1,11 @@
+.users{
+    width: 40%;
+
+}
+.wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.user{
+    width: 40%;
+}
