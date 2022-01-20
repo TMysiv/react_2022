@@ -12,7 +12,7 @@ const User = ({user}) => {
             <Link to={id.toString()} state={user}>
                 <button>Details</button>
             </Link>
-            <Link to='albums' state={user}>
+            <Link to={`${id}/albums`}>
                 <button>Albums</button>
             </Link>
         </div>

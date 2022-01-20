@@ -42,7 +42,9 @@ const UserAllInformation = ({
                     <li>{phone}</li>
                     <li>{website}</li>
                 </ul>
-                <Link to={'posts'} state={id}><button >All Posts</button></Link>
+                <Link to={'posts'} state={id}>
+                    <button>All Posts</button>
+                </Link>
             </div>
             <div>
                 <Outlet/>
