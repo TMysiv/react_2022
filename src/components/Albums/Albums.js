@@ -16,6 +16,7 @@ const Albums = () => {
 
     return (
         <div>
+            <h3>Albums:</h3>
             {albums.map(album => <Album key={album.id} album={album}/>)}
             <Outlet/>
         </div>

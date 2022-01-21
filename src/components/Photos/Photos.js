@@ -17,6 +17,7 @@ const Photos = () => {
 
     return (
         <div>
+            <h3>Photos:</h3>
             {photos.map(photo => <Photo key={photo.id} photo={photo}/>)}
         </div>
     );

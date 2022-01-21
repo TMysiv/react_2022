@@ -18,6 +18,7 @@ const Posts = () => {
 
     return (
         <div className={'posts'}>
+            <h3>Posts:</h3>
             {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
