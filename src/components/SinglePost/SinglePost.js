@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import {Outlet, useLocation, useParams} from "react-router-dom";
 
 import getPostsById from "../../services/post.service";
 import PostInformation from "../PostInformation/PostInformation";
@@ -24,6 +24,7 @@ const SinglePost = () => {
     return (
         <div>
             {post && <PostInformation post={post}/>}
+            <Outlet/>
         </div>
     );
 };

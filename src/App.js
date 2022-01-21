@@ -9,6 +9,7 @@ import Albums from "./components/Albums/Albums";
 import Photos from "./components/Photos/Photos";
 import PostComponent from "./components/PostComponents/PostComponents";
 import SinglePost from "./components/SinglePost/SinglePost";
+import Comments from "./components/Comments/Comments";
 
 
 const App = () => {
@@ -25,7 +26,9 @@ const App = () => {
                         </Route>
                     </Route>
                     <Route path={'post'} element={<PostComponent/>}>
-                        <Route path={':id'} element={<SinglePost/>}/>
+                        <Route path={':id'} element={<SinglePost/>}>
+                            <Route path={'comments'} element={<Comments/>}/>
+                        </Route>
                     </Route>
                 </Route>
             </Routes>
