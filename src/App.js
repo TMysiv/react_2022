@@ -7,6 +7,8 @@ import UserDetails from "./components/UserDetails/UserDetails";
 import Posts from "./components/Posts/Posts";
 import Albums from "./components/Albums/Albums";
 import Photos from "./components/Photos/Photos";
+import PostComponent from "./components/PostComponents/PostComponents";
+import SinglePost from "./components/SinglePost/SinglePost";
 
 
 const App = () => {
@@ -21,6 +23,9 @@ const App = () => {
                         <Route path={':id/albums'} element={<Albums/>}>
                             <Route path={':albumId/photos'} element={<Photos/>}/>
                         </Route>
+                    </Route>
+                    <Route path={'post'} element={<PostComponent/>}>
+                        <Route path={':id'} element={<SinglePost/>}/>
                     </Route>
                 </Route>
             </Routes>

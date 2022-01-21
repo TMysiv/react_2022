@@ -1,9 +1,6 @@
-.album{
+.postInformation{
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-h6{
-    margin: 5px;
+
 }

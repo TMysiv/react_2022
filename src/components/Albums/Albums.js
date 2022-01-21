@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import {Outlet, useParams} from "react-router-dom";
 
 import getAlbumsById from "../../services/albums.service";
 import Album from "../Album/Album";
@@ -17,6 +17,7 @@ const Albums = () => {
     return (
         <div>
             {albums.map(album => <Album key={album.id} album={album}/>)}
+            <Outlet/>
         </div>
     );
 }

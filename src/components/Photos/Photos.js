@@ -11,9 +11,8 @@ const Photos = () => {
 
     useEffect(() => {
         getPhotosById(albumId).then(value => {
-            setPhotos(value)
+            setPhotos([...value])
         })
-
     }, [albumId])
 
     return (

@@ -3,9 +3,13 @@
     font-size: 22px;
     display: flex;
     justify-content: space-between;
+    width: 90%;
 }
 
 .user a {
     text-decoration: none;
     color: black;
+}
+.user_wrap{
+    display: flex;
 }
