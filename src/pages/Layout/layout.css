@@ -1,0 +1,27 @@
+.layout{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    row-gap: 30px;
+}
+.layout button{
+    width: 40%;
+    height: 60px;
+}
+.layout a{
+    width: 100%;
+}
+.wrap{
+    display: flex;
+    column-gap: 10%;
+}
+.outlet{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.outlet button{
+    width: 60%;
+}
