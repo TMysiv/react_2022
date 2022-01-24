@@ -1,0 +1,21 @@
+.header{
+    background: cornflowerblue;
+    font-size: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+}
+.header a:hover{
+    color: red;
+}
+.episodes{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: auto;
+}

@@ -1,0 +1,29 @@
+.header_episodes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: silver;
+    height: 100px;
+}
+.wrap_episode{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2%;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.button_episodes{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    padding-top: 30px;
+}
+.button_episodes button{
+    cursor: pointer;
+    color: white;
+    background: cornflowerblue;
+    width: 100px;
+    height: 30px;
+}

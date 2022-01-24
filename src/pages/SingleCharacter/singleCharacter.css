@@ -1,0 +1,11 @@
+.single{
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+.single h4,h5{
+    padding: 0;
+    margin: 0;
+}
