@@ -12,20 +12,18 @@ const Episodes = () => {
     useEffect(() => {
         apiServise.getEpisodes(page).then(value =>{
             setEpisodes(value.results)})
-    }, [])
+    }, [page])
 
     const nextPage = (page) => {
         if (page <= 3) {
             setPage(++page)
-            apiServise.getEpisodes(page).then(value =>
-                setEpisodes(value.results))
+            return
         }
     }
     const previousPage = (page) => {
         if (page >1){
             setPage(--page)
-            apiServise.getEpisodes(page).then(value =>
-                setEpisodes(value.results))
+            return
         }
     }
 
