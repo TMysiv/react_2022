@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import newPhoto from "../../services/api.service";
 
 const Cat = () => {
-
+    
     const [cat, setCat] = useState(null);
 
     useEffect(() => {
