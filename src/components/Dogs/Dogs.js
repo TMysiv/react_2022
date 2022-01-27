@@ -8,12 +8,17 @@ const Dogs = () => {
     const [dogs, setDogs] = useState([]);
 
    useEffect(()=>{
-      setDogs(JSON.parse(localStorage.getItem('dog')))
+      setDogs(JSON.parse(localStorage.getItem('dogs')))
    },[])
-
+    
+    // const deleteDogs = (dog) => {
+    //     const index = dogs.indexOf(dog)
+    //     dogs.splice(index,1)
+    //     localStorage.setItem('dogs',JSON.stringify('dogs'))
+    // }
     return (
         <div>
-            {dogs.map(dog => <Dog  dog={dog}/>)}
+            {dogs.map(dog => <Dog  dog={dog} />)}
         </div>
     );
 }

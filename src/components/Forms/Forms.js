@@ -19,9 +19,9 @@ const Forms = ({reducer}) => {
         e.preventDefault()
     }
     const newDog = (state) => {
-        const dog = JSON.parse(localStorage.getItem('dog')) || [];
+        const dog = JSON.parse(localStorage.getItem('dogs')) || [];
         dog.push(state)
-        localStorage.setItem('dog', JSON.stringify(dog))
+        localStorage.setItem('dogs', JSON.stringify(dog))
     }
     const newCat = (state) => {
         const cat = JSON.parse(localStorage.getItem('cat')) || [];
