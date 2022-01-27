@@ -1,0 +1,12 @@
+.count_wrap{
+    border: 1px solid black;
+    width: 30%;
+    margin-top: 20px;
+    text-align: center;
+}
+.count_wrap button{
+    width: 30%;
+    cursor: pointer;
+    background: cornflowerblue;
+    margin-left: 5px;
+}
