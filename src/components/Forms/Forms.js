@@ -1,57 +1,54 @@
-import React, {useReducer} from 'react';
+import React, {createRef, useReducer} from 'react';
 
 import css from './forms.css'
-import Dogs from "../Dogs/Dogs";
+import Dog from "../Dog/Dog";
+import Cat from "../Cat/Cat";
 
 const Forms = ({reducer}) => {
 
-    const [state, dispatch] = useReducer(reducer, {addDog: '', addCat: ''});
+    const [state, dispatch] = useReducer(reducer, {dog: [], cat: []});
 
-    const onChange = (e) => {
-        dispatch(
-            {
-                type: 'input text',
-                field: e.target.name,
-                payload: e.target.value
-            })
-    }
-    const onSubmit = (e) => {
+    const inputDog = createRef();
+    const inputCat = createRef();
+
+    const addDog = (e) => {
         e.preventDefault()
-    }
-    const newDog = (state) => {
-        const dog = JSON.parse(localStorage.getItem('dogs')) || [];
-        dog.push(state)
-        localStorage.setItem('dogs', JSON.stringify(dog))
-    }
-    const newCat = (state) => {
-        const cat = JSON.parse(localStorage.getItem('cat')) || [];
-        cat.push(state)
-        localStorage.setItem('cat', JSON.stringify(cat))
-    }
+        const newDog = inputDog.current.value
+        dispatch({
+            type: 'addDog',
+            target: 'dog',
+            payload: {name: newDog,id:new Date().getTime()}
+        })
+        inputDog.current.value=''
 
+    }
+    const addCat = (e) => {
+        e.preventDefault()
+        const newCat = inputCat.current.value
+        dispatch({
+            type: 'addCat',
+            target: 'cat',
+            payload: {name: newCat,id:new Date().getTime()}
+        })
+        inputCat.current.value=''
+    }
     return (
         <div className={'wrap'}>
             <div>
-                <form onSubmit={onSubmit}>
-                    <label>Add Dog:<input type="text" name={'addDog'} value={state.addDog} onChange={onChange}/></label>
-                    <button onClick={() => {
-                        newDog(state.addDog)
-                    }}>save
-                    </button>
-                </form>
-                <Dogs/>
+                <form>
+                    <label>ADD Dog:<input type="text" name={'dog'} ref={inputDog}/></label>
+                    <button onClick={addDog}>Save</button>
 
-            </div>
-            <div>
-                <form onSubmit={onSubmit}>
-                    <label>Add Cat:<input type="text" name={'addCat'} value={state.addCat} onChange={onChange}/></label>
-                    <button onClick={() => {
-                        newCat(state.addCat)
-                    }}>save
-                    </button>
-                </form>
+                    {state.dog.map(dog =><Dog key={dog.id} dog={dog} dispatch={dispatch}/>)}
 
+                    <label>ADD Cat:<input type="text" name={'cat'} ref={inputCat}/></label>
+                    <button onClick={addCat}>Save</button>
+
+                    {state.cat.map(cat=><Cat key={cat.id} cat={cat} dispatch={dispatch}/>)}
+                </form>
             </div>
+
+
         </div>
     );
 };
