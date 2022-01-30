@@ -16,7 +16,7 @@ const Cars = () => {
 
     return (
         <div className={'wrap'}>
-            {status==='pending' && <h2>Loading...</h2>}
+            {status === 'pending' && <h2>Loading...</h2>}
             {error && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>

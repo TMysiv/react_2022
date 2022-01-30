@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {joiResolver} from "@hookform/resolvers/joi";
@@ -9,12 +9,15 @@ import css from './form.css'
 
 const Form = () => {
 
-    const {register, handleSubmit, reset,formState:{errors}} = useForm({resolver:joiResolver(carValidator),mode:"onTouched"});
+    const {register, handleSubmit, reset, formState: {errors},setValue} = useForm({
+        resolver: joiResolver(carValidator),
+        mode: "onTouched"
+    });
     const dispatch = useDispatch();
 
     const {carId} = useSelector(state => state['carReducer']);
 
-    const onSubmit = (car) => {
+       const onSubmit = (car) => {
         if (carId) {
             dispatch(updateCarById({carId, car}))
         } else {

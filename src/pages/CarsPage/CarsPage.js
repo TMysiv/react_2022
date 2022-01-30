@@ -7,8 +7,8 @@ const CarsPage = () => {
 
     return (
         <>
-          <Form/>
-          <Cars/>
+            <Form/>
+            <Cars/>
         </>
     );
 };

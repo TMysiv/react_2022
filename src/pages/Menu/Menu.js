@@ -1,19 +1,21 @@
 import React from 'react';
 import {NavLink, Outlet} from "react-router-dom";
 
-const Menu = () => {
+import css from './menu.css'
 
+const Menu = () => {
 
     return (
         <>
-            <div>
+            <div className={'menu'}>
                 <NavLink to={'cars'}>CARS</NavLink>
                 <NavLink to={'users'}>USERS</NavLink>
                 <NavLink to={'posts'}>POSTS</NavLink>
                 <NavLink to={'comments'}>COMMENTS</NavLink>
             </div>
-
-            <Outlet/>
+            <div className={'outlet_menu'}>
+                <Outlet/>
+            </div>
 
         </>
     );

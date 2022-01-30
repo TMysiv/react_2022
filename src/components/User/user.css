@@ -1,0 +1,11 @@
+.user_wrap{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    row-gap: 10px;
+    border: 1px solid black;
+}
+.user_wrap p{
+    margin: 0;
+}

@@ -1,0 +1,18 @@
+.menu{
+    display: flex;
+    width: 100%;
+    background: cornflowerblue;
+    justify-content: center;
+    column-gap: 10%;
+    font-size: 25px;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+}
+.menu a:hover{
+    color: red;
+}
+.outlet_menu{
+    margin-top: 30px;
+}

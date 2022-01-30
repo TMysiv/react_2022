@@ -46,7 +46,7 @@ export const updateCarById = createAsyncThunk(
             await carService.update(carId, car)
             dispatch(getAllCars())
         } catch (e) {
-
+            console.log(e)
         }
     }
 )
