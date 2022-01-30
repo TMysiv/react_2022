@@ -1,0 +1,13 @@
+.car_wrap{
+    border: 1px solid black;
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+}
+.car_wrap p {
+    margin: 0;
+    padding: 0;
+}
+.car_wrap button{
+    width: 50%;
+}

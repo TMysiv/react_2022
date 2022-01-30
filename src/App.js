@@ -1,16 +1,22 @@
 import React from 'react';
+import {Route, Routes} from "react-router-dom";
 
-import Form from "./components/Form/Form";
-import Cars from "./components/Cars/Cars";
+import Menu from "./pages/Menu/Menu";
+import CarsPage from "./pages/CarsPage/CarsPage";
 
 
 const App = () => {
 
     return (
-        <div>
-            <Form/>
-            <Cars/>
-        </div>
+        <>
+            <Routes>
+                <Route path={'/'} element={<Menu/>}>
+                    <Route path={'cars'} elemenet={<CarsPage/>}/>
+                </Route>
+            </Routes>
+
+
+        </>
     );
 };
 

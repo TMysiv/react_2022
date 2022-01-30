@@ -1,0 +1,7 @@
+.errors{
+    color: red;
+}
+.form_wrap{
+    display: flex;
+    justify-content: center;
+}

@@ -5,6 +5,7 @@ import {joiResolver} from "@hookform/resolvers/joi";
 
 import {createCar, updateCarById} from "../../store";
 import {carValidator} from "../../validators/car.validator";
+import css from './form.css'
 
 const Form = () => {
 
@@ -23,16 +24,16 @@ const Form = () => {
     }
     return (
 
-        <div>
+        <div className={'form_wrap'}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Model:<input type="text" defaultValue={''} {...register('model')}/></label>
-                {errors.model && <span>{errors.model.message}</span>}
+                {errors.model && <span className={'errors'}>{errors.model.message}</span>}
 
                 <label>Price:<input type="text" defaultValue={''} {...register('price')}/></label>
-                {errors.price && <span>{errors.price.message}</span>}
+                {errors.price && <span className={'errors'}>{errors.price.message}</span>}
 
                 <label>Year:<input type="text" defaultValue={''} {...register('year')}/></label>
-                {errors.year && <span>{errors.year.message}</span>}
+                {errors.year && <span className={'errors'}>{errors.year.message}</span>}
 
                 <button>{carId ? 'update' : 'send'}</button>
             </form>
