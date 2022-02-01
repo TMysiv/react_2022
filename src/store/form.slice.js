@@ -4,7 +4,7 @@ const formSlice = createSlice({
     name: 'formSlice',
     initialState: {
         affairs: [],
-        checked:false
+
     },
     reducers: {
         createAffair: (state, action) => {
@@ -16,14 +16,14 @@ const formSlice = createSlice({
         deleteAffair: (state, action) => {
             state.affairs = state.affairs.filter(affair => affair.id !== action.payload.id)
         },
-        checkedCheckbox:(state,action)=>{
-            console.log(action.payload)
+        getChecked:(state,action)=>{
+           state.affairs.map(affair=>affair.username:action.payload.checked)
         }
     }
 })
 
 const formReducer = formSlice.reducer;
 
-export const {createAffair, deleteAffair,checkedCheckbox} = formSlice.actions;
+export const {createAffair, deleteAffair,getChecked} = formSlice.actions;
 
 export default formReducer

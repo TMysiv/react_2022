@@ -2,22 +2,24 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 
 import css from "./affair.css"
-import {checkedCheckbox, deleteAffair} from "../../store/form.slice";
+import {deleteAffair, getChecked} from "../../store/form.slice";
 
-const Affair = ({affair:{id,name}}) => {
+const Affair = ({affair: {id, name}}) => {
 
-    const [checked, setChecked] = useState(true)
+    const [checked, setChecked] = useState(false)
     const dispatch = useDispatch();
 
-    // dispatch(checkedCheckbox({checked}))
-    if (checked===true){
-        
+    if (checked){
+        dispatch(getChecked({checked}))
     }
+
     return (
-        <div className={'affair'}>
-            <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
-            {name}
-            <button onClick={()=>{dispatch(deleteAffair({id}))}}>delete</button>
+        <div className={'wrap_affair'}>
+            <div className={checked ? 'checked' : 'unchecked'}>
+                <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                {name}
+            </div>
+            <button onClick={() => {dispatch(deleteAffair({id}))}}>delete</button>
         </div>
     );
 };

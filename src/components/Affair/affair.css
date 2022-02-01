@@ -1,7 +1,11 @@
-.affair{
+.checked{
+    text-decoration: line-through;
+
+}
+.wrap_affair{
     font-size: 18px;
     display: flex;
     justify-content: space-between;
     width: 150px;
     margin: 5px;
-    }
+}
