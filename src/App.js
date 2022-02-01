@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+
+import Form from "./components/Form/Form";
+import Affairs from "./components/Affairs/Affairs";
+import css from "./App.css"
 
 const App = () => {
+
     return (
-        <div>
-            
+        <div className={'wrap'}>
+            <Form/>
+            <Affairs/>
         </div>
     );
 };
