@@ -2,8 +2,8 @@ import React from "react";
 
 import Form from "./components/Form/Form";
 import Affairs from "./components/Affairs/Affairs";
-import css from "./App.css"
 import Checkbox from "./components/Checkbox/Checkbox";
+import css from "./App.css"
 
 const App = () => {
 
