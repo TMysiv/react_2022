@@ -11,10 +11,10 @@ const Affair = ({affair: {id, name,status}}) => {
     return (
         <div className={'wrap_affair'}>
             <div className={status?'checked':'unchecked'}>
-                <input type="checkbox" onChange={() => dispatch(getChecked({id}))}/>
+                <input type="checkbox" value={status} onChange={() => dispatch(getChecked({id}))}/>
                 {name}
             </div>
-            <button onClick={() => {dispatch(deleteAffair({id}))}}>delete</button>
+            <button onClick={() => {dispatch(deleteAffair({id,status}))}}>delete</button>
         </div>
     );
 };

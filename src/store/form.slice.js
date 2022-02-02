@@ -17,11 +17,14 @@ const formSlice = createSlice({
         },
         deleteAffair: (state, action) => {
             state.affairs = state.affairs.filter(affair => affair.id !== action.payload.id)
+            if (action.payload.status) {
+                state.completed = --state.completed
+            }
         },
         getChecked: (state, action) => {
             const checkedAffairs = state.affairs.find(value => value.id === action.payload.id);
             checkedAffairs.status = !checkedAffairs.status
-            checkedAffairs.status?++state.completed:--state.completed
+            checkedAffairs.status ? ++state.completed : --state.completed
         }
     }
 })
