@@ -13,14 +13,31 @@ export const getAllUsers = createAsyncThunk(
     }
 )
 
+export const getUserById=createAsyncThunk(
+    'usersSlice/getUserById',
+    async ({id})=>{
+        try {
+            const user = await usersService.getbyId(id);
+            return user
+        }catch (e){
+
+        }
+    }
+)
+
 const usersSlice = createSlice({
     name: 'usersSlice',
     initialState: {
         users: [],
         status:null,
-        errors:null
+        errors:null,
+        user:{}
     },
-    reducers: {},
+    reducers: {
+        getUser:(state,action)=>{
+
+        }
+    },
     extraReducers: {
         [getAllUsers.pending]: (state, action) => {
             state.status = 'pending'
@@ -32,9 +49,13 @@ const usersSlice = createSlice({
         [getAllUsers.rejected]: (state, action) => {
             state.status = 'rejected'
             state.errors = action.payload
-        }
+        },
+        [getUserById.fulfilled]: (state, action) => {
+            state.status = 'fulfilled'
+            state.user = action.payload
+        },
     }
 })
 const usersReducer = usersSlice.reducer;
-
+export const {getUser} = usersSlice.actions;
 export default usersReducer

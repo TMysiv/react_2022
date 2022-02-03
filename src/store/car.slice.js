@@ -29,7 +29,6 @@ export const createCar = createAsyncThunk(
 export const deleteCarById = createAsyncThunk(
     'carSlice/deleteCarById',
     async ({id}, {dispatch}) => {
-        console.log(id)
         try {
             await carService.deleteCar(id);
             dispatch(deleteCar({id}))

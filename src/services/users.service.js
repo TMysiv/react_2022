@@ -7,6 +7,7 @@ const axiosService = axios.create({
 });
 
 const usersService= {
-    getAll:()=>axiosService.get(urls.users).then(value => value.data)
+    getAll:()=>axiosService.get(urls.users).then(value => value.data),
+    getbyId:(id)=>axiosService.get(`${urls.users}/${id}`).then(value => value.data)
 }
 export default usersService
