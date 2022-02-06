@@ -1,9 +1,20 @@
-import React,{FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import {useAppDispatch, useAppSelector} from "../../hooks/redux-hooks";
 
-const Cars:FC = () => {
+import Car from "../Car/Car";
+import {getAllCars} from "../../store/car.slice";
+
+const Cars: FC = () => {
+
+    const {cars} = useAppSelector(state => state.carReducer);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+            dispatch(getAllCars())
+    })
     return (
         <div>
-            cars
+            {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
 };

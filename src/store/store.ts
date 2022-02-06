@@ -1,7 +1,8 @@
 import {configureStore,combineReducers} from "@reduxjs/toolkit"
+import carReducer from "./car.slice";
 
 const rootReducer = combineReducers({
-
+    carReducer
 })
 
 export const setAppStore = ()=>configureStore({
