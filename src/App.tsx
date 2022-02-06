@@ -7,7 +7,8 @@ const App:FC = () => {
 
     return (
         <div>
-            bnhg
+            <Form/>
+            <Cars/>
         </div>
     );
 };
