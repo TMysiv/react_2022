@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
 
-import {ICar} from "../../interfaces/car.interface";
 import {useAppDispatch} from "../../hooks/redux-hooks";
-import {deleteCarById} from "../../store/car.slice";
+import {ICar} from "../../interfaces/car.interface";
+import {deleteCarById, update} from "../../store/car.slice";
 
 const Car: FC<{ car: ICar }> = ({car:{id,price,year,model}}) => {
 
@@ -15,7 +15,7 @@ const Car: FC<{ car: ICar }> = ({car:{id,price,year,model}}) => {
             <div>price:{price}</div>
             <div>year:{year}</div>
             <button onClick={()=>{dispatch(deleteCarById({id}))}}>delete</button>
-            <button>update</button>
+            <button onClick={()=>{dispatch(update({id}))}}>update</button>
             <hr/>
         </div>
     );

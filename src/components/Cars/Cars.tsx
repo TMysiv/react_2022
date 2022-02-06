@@ -10,8 +10,8 @@ const Cars: FC = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-            dispatch(getAllCars())
-    })
+        dispatch(getAllCars())
+    }, [])
     return (
         <div>
             {cars.map(car => <Car key={car.id} car={car}/>)}
