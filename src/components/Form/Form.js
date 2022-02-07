@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {carService} from "../../services/car.service";
+import {getDiscover} from "../../ex";
 
 const Form = () => {
     const {
@@ -9,8 +10,14 @@ const Form = () => {
 
 const submit = (car) => {
    carService.create(car).then(value => {
-       console.log(value)})
+       })
 }
+
+    useEffect(()=>{
+       getDiscover.getAll().then(value => {
+           console.log(value.data)})
+
+    },[])
 
     return (
         <div>
